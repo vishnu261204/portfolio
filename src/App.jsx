@@ -37,6 +37,7 @@ function App() {
       <header className="topbar">
         <div className="avatar" aria-label="Vishnu Ram R V">VR</div>
         <nav className="nav">
+          <a href="#Home">Home</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
@@ -51,7 +52,7 @@ function App() {
         </nav>
       </header>
 
-      <header className="hero">
+      <section className="hero" id="Home">
         <div className="hero__copy">
           <h1>
             Hi, I&apos;m <span className="highlight">R V Vishnu Ram</span>—a full-stack developer crafting expressive digital
@@ -82,7 +83,7 @@ function App() {
           </div>
         </div>
 
-      </header>
+      </section>
 
       <section id="projects" className="section">
         <div className="section__heading">

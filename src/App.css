@@ -229,6 +229,9 @@
   gap: 8px;
 }
 
+#Home {
+  scroll-margin-top: 140px;
+}
 .section {
   display: flex;
   flex-direction: column;
