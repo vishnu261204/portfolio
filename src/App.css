@@ -72,7 +72,6 @@
   align-items: flex-start;
   text-align: left;
   width: 100%;
-  min-height: calc(100vh - 160px);
 }
 
 .hero__copy h1 {
@@ -167,6 +166,29 @@
   transform: translateY(-1px);
 }
 
+.contact-icons img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+.contacts-section{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+.git-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+.phone-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
 .meta-card {
   display: flex;
   gap: 10px;
@@ -236,7 +258,6 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  min-height: calc(100vh - 180px);
   scroll-margin-top: 96px;
 }
 
@@ -266,15 +287,38 @@
   color: var(--muted);
 }
 
-.grid {
+.grid1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
+  width: 100%;
 }
+
 
 .grid--dense {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+/* .grid-row {
+  display: flex;
+  gap: fit-content;
+  flex-wrap: wrap;
+} */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  width: 100%;
+  justify-items: center;
+}
+
+.mangoDB {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
 
 .card {
   background: var(--glass);
@@ -287,11 +331,16 @@
   gap: 12px;
 }
 
+
 .card--compact {
-  padding: 14px 16px;
-  flex-direction: row;
+  width: 180px;
+  height: 140px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0;
 }
+
 
 .card__header {
   display: flex;
@@ -404,6 +453,7 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {
@@ -427,8 +477,108 @@
     padding: 40px 20px 72px;
   }
 
-  /* Ensure anchored sections are scrolled into view below the sticky topbar */
   .section {
     scroll-margin-top: 72px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav a {
+    padding: 6px 6px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__copy h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero__copy .lead {
+    font-size: 16px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions a {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .contact-bar {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+/* Mobile expertise cards */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 14px;
+  }
+
+  .card--compact {
+    width: 90px;
+    height: 80px;
+    border-radius: 12px;
+  }
+
+  .mangoDB {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card--compact:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .callout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .callout__actions {
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .page {
+    padding: 32px 16px 64px;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Hide VR avatar on mobile */
+@media (max-width: 768px) {
+  .avatar {
+    display: none;
   }
 }

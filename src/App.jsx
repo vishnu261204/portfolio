@@ -1,10 +1,28 @@
 import './App.css'
+import mangoDB from "./assets/mongoDB.png";
+import Express from "./assets/Express.png";
+import Github from "./assets/Github.png";
+import Html from "./assets/HTML5.png";
+import Css from "./assets/CSS3.png";
+import Javascript from "./assets/Javascript.png";
+import Bootstrap from "./assets/Bootstrap.png";
+import Postman from "./assets/Postman.png";
+import Wordpress from "./assets/Wordpress.png";
+import Git from "./assets/Git.png";
+import Python from "./assets/Python.png";
+import Docker from "./assets/Docker.png";
+import Sass from "./assets/Sass.png";
+import Linkedin from "./assets/Linkedin.png";
+import phone from "./assets/viber.png";
+
+import Snowfall from 'react-snowfall';
+
 
 const projects = [
   {
-    title: 'Voice-Based Desktop Assistant',
+    title: 'Quiz Web App',
     description:
-      'Offline Python assistant that performs searches, opens apps, reads PDFs, and executes voice-triggered actions with speech recognition and TTS.',
+      'Developed an interactive Quiz Web App that allows users to attempt multiple-choice questions with instant feedback and score evaluation.',
     tags: ['Python', 'Automation', 'Voice'],
   },
   {
@@ -13,15 +31,12 @@ const projects = [
       'Full-stack web app with React + Node.js + Express + MySQL. Role-based dashboards for admins and employees, secure auth, and full CRUD.',
     tags: ['React', 'Node.js', 'Express', 'MySQL'],
   },
-]
-
-const skills = [
-  'React + modern JavaScript',
-  'Design systems & tokens',
-  'Creative coding & motion',
-  'Accessible, resilient UI',
-  'Prototyping in Figma',
-  'Storytelling with data',
+  {
+    title: 'Authentication System',
+    description:
+      'Secure user auth system with React frontend and Node.js + Express + MongoDB backend. Features JWT, password hashing, and protected routes.',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+  },
 ]
 
 const contacts = [
@@ -33,6 +48,8 @@ const contacts = [
 
 function App() {
   return (
+    <>
+    <Snowfall />
     <div className="page">
       <header className="topbar">
         <div className="avatar" aria-label="Vishnu Ram R V">VR</div>
@@ -82,7 +99,6 @@ function App() {
             ))}
           </div>
         </div>
-
       </section>
 
       <section id="projects" className="section">
@@ -93,7 +109,7 @@ function App() {
           </div>
         </div>
 
-        <div className="grid">
+        <div className="grid1">
           {projects.map((project) => (
             <article key={project.title} className="card">
               <div className="card__header">
@@ -108,7 +124,7 @@ function App() {
                   </span>
                 ))}
               </div>
-              <button className="text-link">GitHub →</button>
+              <button className="text-link" onClick={() => window.open("https://github.com/vishnu261204", "_blank")}>GitHub →</button>
             </article>
           ))}
         </div>
@@ -122,13 +138,14 @@ function App() {
           </div>
         </div>
 
-        <div className="grid grid--dense">
-          {skills.map((skill) => (
-            <div key={skill} className="card card--compact">
-              <span className="meta-dot" />
-              <p>{skill}</p>
-            </div>
-          ))}
+        <div className="skills-grid">
+          {[Html, Css, Javascript, Bootstrap, Github, Postman, mangoDB, Express, Wordpress, Git, Python, Docker, Sass].map(
+            (icon, index) => (
+              <div key={index} className="card card--compact">
+                <img src={icon} className="mangoDB" />
+              </div>
+            )
+          )}
         </div>
       </section>
 
@@ -149,10 +166,23 @@ function App() {
             <a className="btn btn-ghost" href="#projects">
               Browse projects
             </a>
+            <div className='contacts-section'>
+            <a className='contact-icons' href="https://www.linkedin.com/in/-vishnuram" target="_blank" rel="noreferrer">
+              <img src={Linkedin} alt="linkedin" />
+            </a>
+            <a className='git-icon' href="https://github.com/vishnu261204" target="_blank" rel="noreferrer">
+              <img src={Github} alt="github" />
+            </a>
+            <a className='phone-icon' href="tel:+919047917428" >
+              <img src={phone} alt="phone" />
+            </a>
           </div>
+          </div>
+          
         </div>
       </section>
     </div>
+    </>
   )
 }
 
